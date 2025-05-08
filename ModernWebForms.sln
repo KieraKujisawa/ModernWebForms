@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35931.197 d17.13
+VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernWebForms", "ModernWebForms\ModernWebForms.csproj", "{84DEE29A-98A6-4669-A87B-D0F3E57BC136}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernWebForms.Core", "ModernWebForms.Core\ModernWebForms.Core.csproj", "{B556EEE6-EBBC-482B-1142-8FA80384D37D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{84DEE29A-98A6-4669-A87B-D0F3E57BC136}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84DEE29A-98A6-4669-A87B-D0F3E57BC136}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84DEE29A-98A6-4669-A87B-D0F3E57BC136}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B556EEE6-EBBC-482B-1142-8FA80384D37D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B556EEE6-EBBC-482B-1142-8FA80384D37D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B556EEE6-EBBC-482B-1142-8FA80384D37D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B556EEE6-EBBC-482B-1142-8FA80384D37D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
