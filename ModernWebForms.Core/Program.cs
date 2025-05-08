@@ -7,7 +7,17 @@ using Yarp.ReverseProxy.Forwarder;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSystemWebAdapters();
 
-builder.Services.AddHttpForwarder();
+// Disable compression to resolve the following warning
+// warn: Microsoft.WebTools.BrowserLink.Net.BrowserLinkMiddleware[4]
+// Unable to configure Browser Link script injection on the response. This may have been caused by the response's Content-Encoding: 'gzip'. Consider disabling response compression.
+//
+// builder.Services.AddHttpForwarder();
+
+builder.Services.AddReverseProxy()
+    .ConfigureHttpClient((context, handler) =>
+    {
+        handler.AutomaticDecompression = System.Net.DecompressionMethods.All;
+    });
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
