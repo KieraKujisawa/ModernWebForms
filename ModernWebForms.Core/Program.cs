@@ -4,6 +4,8 @@ using System.Net;
 using Microsoft.AspNetCore.ResponseCompression;
 using Yarp.ReverseProxy.Forwarder;
 
+#pragma warning disable CS8604
+
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSystemWebAdapters();
 
