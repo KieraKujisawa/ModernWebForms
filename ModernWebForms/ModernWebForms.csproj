@@ -275,26 +275,27 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Antlr" Version="3.5.0.2" />
-    <PackageReference Include="bootstrap" Version="5.2.3" />
-    <PackageReference Include="EntityFramework" Version="6.4.4" />
-    <PackageReference Include="jQuery" Version="3.7.0" />
+    <PackageReference Include="bootstrap" Version="5.3.5" />
+    <PackageReference Include="EntityFramework" Version="6.5.1" />
+    <PackageReference Include="jQuery" Version="3.7.1" />
     <PackageReference Include="Microsoft.AspNet.FriendlyUrls" Version="1.0.2" />
     <PackageReference Include="Microsoft.AspNet.FriendlyUrls.Core" Version="1.0.2" />
     <PackageReference Include="Microsoft.AspNet.Identity.Core" Version="2.2.4" />
     <PackageReference Include="Microsoft.AspNet.Identity.EntityFramework" Version="2.2.4" />
     <PackageReference Include="Microsoft.AspNet.Identity.Owin" Version="2.2.4" />
-    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.9" />
-    <PackageReference Include="Microsoft.AspNet.Razor" Version="3.2.9" />
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.3.0" />
+    <PackageReference Include="Microsoft.AspNet.Razor" Version="3.3.0" />
     <PackageReference Include="Microsoft.AspNet.ScriptManager.MSAjax" Version="5.0.0" />
     <PackageReference Include="Microsoft.AspNet.ScriptManager.WebForms" Version="5.0.0" />
     <PackageReference Include="Microsoft.AspNet.Web.Optimization" Version="1.1.3" />
     <PackageReference Include="Microsoft.AspNet.Web.Optimization.WebForms" Version="1.1.3" />
-    <PackageReference Include="Microsoft.AspNet.WebApi" Version="5.2.9" />
-    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.9" />
-    <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.9" />
-    <PackageReference Include="Microsoft.AspNet.WebApi.WebHost" Version="5.2.9" />
-    <PackageReference Include="Microsoft.AspNet.WebPages" Version="3.2.9" />
-    <PackageReference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform" Version="2.0.1" />
+    <PackageReference Include="Microsoft.AspNet.WebApi" Version="5.3.0" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.3.0" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.WebHost" Version="5.3.0" />
+    <PackageReference Include="Microsoft.AspNet.WebPages" Version="3.3.0" />
+    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="9.0.4" />
+    <PackageReference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform" Version="4.1.0" />
     <PackageReference Include="Microsoft.Owin" Version="4.2.2" />
     <PackageReference Include="Microsoft.Owin.Host.SystemWeb" Version="4.2.2" />
     <PackageReference Include="Microsoft.Owin.Security" Version="4.2.2" />
@@ -307,8 +308,38 @@
     <PackageReference Include="Microsoft.Web.Infrastructure" Version="2.0.0" />
     <PackageReference Include="Modernizr" Version="2.8.3" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Newtonsoft.Json.Bson" Version="1.0.3" />
+    <PackageReference Include="Ninject" Version="3.3.6" />
+    <PackageReference Include="Ninject.Web.Common" Version="3.3.2" />
+    <PackageReference Include="Ninject.Web.Common.WebHost" Version="3.3.2" />
     <PackageReference Include="Owin" Version="1.0.0" />
+    <PackageReference Include="Serilog" version="4.2.0" />
+    <PackageReference Include="Serilog.Formatting.Compact" Version="3.0.0" />
+    <PackageReference Include="Serilog.Sinks.Debug" Version="3.0.0" />
+    <PackageReference Include="SerilogWeb.Classic" Version="5.1.66" />
+    <PackageReference Include="System.Buffers" Version="4.6.1" />
+    <PackageReference Include="System.Diagnostics.Debug" Version="4.3.0" />
+    <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="9.0.4" />
+    <PackageReference Include="System.Globalization" Version="4.3.0" />
+    <PackageReference Include="System.Linq" Version="4.3.0" />
+    <PackageReference Include="System.Memory" Version="4.6.3" />
+    <PackageReference Include="System.Numerics.Vectors" Version="4.6.1" />
+    <PackageReference Include="System.Reflection" Version="4.3.0" />
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.1.2" />
+    <PackageReference Include="System.Threading.Channels" Version="9.0.4" />
+    <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.6.3" />
+    <PackageReference Include="WebActivatorEx" version="2.2.0" />
     <PackageReference Include="WebGrease" Version="1.6.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\Ninject.WebForms.Models\Ninject.WebForms.Models.csproj">
+      <Project>{530f1a35-fd28-4ed5-93b4-5660561ee659}</Project>
+      <Name>Ninject.WebForms.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\Ninject.WebForms.Services\Ninject.WebForms.Services.csproj">
+      <Project>{83d6814b-2dc7-4d02-af30-c6e1a33aba80}</Project>
+      <Name>Ninject.WebForms.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

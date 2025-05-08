@@ -3,9 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernWebForms", "ModernWebForms\ModernWebForms.csproj", "{84DEE29A-98A6-4669-A87B-D0F3E57BC136}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernWebForms", "App\ModernWebForms\ModernWebForms.csproj", "{84DEE29A-98A6-4669-A87B-D0F3E57BC136}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernWebForms.Core", "ModernWebForms.Core\ModernWebForms.Core.csproj", "{B556EEE6-EBBC-482B-1142-8FA80384D37D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernWebForms.Core", "App\ModernWebForms.Core\ModernWebForms.Core.csproj", "{B556EEE6-EBBC-482B-1142-8FA80384D37D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "legacy", "legacy", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{D93EE689-C6E8-4891-82BF-B05398BA800C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libraries", "libraries", "{FDCE990B-AD1B-409E-B659-D98581FFB414}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ninject.WebForms.Models", "Libraries\Ninject.WebForms.Models\Ninject.WebForms.Models.csproj", "{530F1A35-FD28-4ED5-93B4-5660561EE659}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ninject.WebForms.Services", "Libraries\Ninject.WebForms.Services\Ninject.WebForms.Services.csproj", "{83D6814B-2DC7-4D02-AF30-C6E1A33ABA80}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "net48", "net48", "{58D71EAA-D5E1-44E0-B226-9F502B13C815}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +33,25 @@ Global
 		{B556EEE6-EBBC-482B-1142-8FA80384D37D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B556EEE6-EBBC-482B-1142-8FA80384D37D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B556EEE6-EBBC-482B-1142-8FA80384D37D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{530F1A35-FD28-4ED5-93B4-5660561EE659}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{530F1A35-FD28-4ED5-93B4-5660561EE659}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{530F1A35-FD28-4ED5-93B4-5660561EE659}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{530F1A35-FD28-4ED5-93B4-5660561EE659}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83D6814B-2DC7-4D02-AF30-C6E1A33ABA80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83D6814B-2DC7-4D02-AF30-C6E1A33ABA80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83D6814B-2DC7-4D02-AF30-C6E1A33ABA80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83D6814B-2DC7-4D02-AF30-C6E1A33ABA80}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{84DEE29A-98A6-4669-A87B-D0F3E57BC136} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{B556EEE6-EBBC-482B-1142-8FA80384D37D} = {D93EE689-C6E8-4891-82BF-B05398BA800C}
+		{02EA681E-C7D8-13C7-8484-4AC65E1B71E8} = {D93EE689-C6E8-4891-82BF-B05398BA800C}
+		{530F1A35-FD28-4ED5-93B4-5660561EE659} = {58D71EAA-D5E1-44E0-B226-9F502B13C815}
+		{83D6814B-2DC7-4D02-AF30-C6E1A33ABA80} = {58D71EAA-D5E1-44E0-B226-9F502B13C815}
+		{58D71EAA-D5E1-44E0-B226-9F502B13C815} = {FDCE990B-AD1B-409E-B659-D98581FFB414}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AF651C63-2FC4-4341-BBF1-E6317514EF87}
