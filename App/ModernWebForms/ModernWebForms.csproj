@@ -61,9 +61,9 @@
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
-    <Reference Include="System.Web.ApplicationServices" />    
+    <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
-    <ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Antlr" Version="3.5.0.2" />
     <PackageReference Include="bootstrap" Version="5.3.5" />
     <PackageReference Include="EntityFramework" Version="6.5.1" />
@@ -84,7 +84,7 @@
     <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.3.0" />
     <PackageReference Include="Microsoft.AspNet.WebApi.WebHost" Version="5.3.0" />
     <PackageReference Include="Microsoft.AspNet.WebPages" Version="3.3.0" />
-    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="9.0.4" />
+    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="9.0.5" />
     <PackageReference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform" Version="4.1.0" />
     <PackageReference Include="Microsoft.Owin" Version="4.2.2" />
     <PackageReference Include="Microsoft.Owin.Host.SystemWeb" Version="4.2.2" />
@@ -110,19 +110,19 @@
     <PackageReference Include="SerilogWeb.Classic" Version="5.1.66" />
     <PackageReference Include="System.Buffers" Version="4.6.1" />
     <PackageReference Include="System.Diagnostics.Debug" Version="4.3.0" />
-    <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="9.0.4" />
+    <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="9.0.5" />
     <PackageReference Include="System.Globalization" Version="4.3.0" />
     <PackageReference Include="System.Linq" Version="4.3.0" />
     <PackageReference Include="System.Memory" Version="4.6.3" />
     <PackageReference Include="System.Numerics.Vectors" Version="4.6.1" />
     <PackageReference Include="System.Reflection" Version="4.3.0" />
     <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.1.2" />
-    <PackageReference Include="System.Threading.Channels" Version="9.0.4" />
+    <PackageReference Include="System.Threading.Channels" Version="9.0.5" />
     <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.6.3" />
     <PackageReference Include="WebActivatorEx" version="2.2.0" />
     <PackageReference Include="WebGrease" Version="1.6.0" />
     <PackageReference Include="ZiggyCreatures.FusionCache" Version="2.2.0" />
-	<PackageReference Include="ZiggyCreatures.FusionCache.OpenTelemetry" Version="2.2.0" />
+    <PackageReference Include="ZiggyCreatures.FusionCache.OpenTelemetry" Version="2.2.0" />
     <PackageReference Include="ZiggyCreatures.FusionCache.Serialization.NewtonsoftJson" Version="2.2.0" />
   </ItemGroup>
   <ItemGroup>
