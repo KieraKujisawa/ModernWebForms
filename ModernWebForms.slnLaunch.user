@@ -1,0 +1,17 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "App\\ModernWebForms\\ModernWebForms.csproj",
+        "Action": "Start",
+        "DebugTarget": "IIS Express (Firefox)"
+      },
+      {
+        "Path": "App\\ModernWebForms.Core\\ModernWebForms.Core.csproj",
+        "Action": "Start",
+        "DebugTarget": "ModernWebForms.Core"
+      }
+    ]
+  }
+]
