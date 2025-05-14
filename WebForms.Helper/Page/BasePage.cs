@@ -31,7 +31,7 @@ public class BasePage : System.Web.UI.Page
     protected override object LoadPageStateFromPersistenceMedium()
     {
         //If server side enabled use it, otherwise use original base class implementation
-        if (true == ViewStateSeverManager.GetViewStateSvrMgr().ServerSideEnabled)
+        if (true == ViewStateServerManager.GetViewStateSvrMgr().ServerSideEnabled)
         {
             return LoadViewState();
         }
@@ -44,7 +44,7 @@ public class BasePage : System.Web.UI.Page
     //overriding method of Page class
     protected override void SavePageStateToPersistenceMedium(object viewState)
     {
-        if (true == ViewStateSeverManager.GetViewStateSvrMgr().ServerSideEnabled)
+        if (true == ViewStateServerManager.GetViewStateSvrMgr().ServerSideEnabled)
         {
             SaveViewState(viewState);
         }
@@ -82,7 +82,7 @@ public class BasePage : System.Web.UI.Page
         }
 
         //Get the viewstate for this page
-        string _viewState = ViewStateSeverManager.GetViewStateSvrMgr().GetViewState(lRequestNumber);
+        string _viewState = ViewStateServerManager.GetViewStateSvrMgr().GetViewState(lRequestNumber);
 
         //If find the viewstate on the server, convert it so ASP.Net can use it
         if (_viewState == null)
@@ -104,7 +104,7 @@ public class BasePage : System.Web.UI.Page
         StringBuilder _viewState = new StringBuilder();
         StringWriter _writer = new StringWriter(_viewState);
         _formatter.Serialize(_writer, viewState);
-        long lRequestNumber = ViewStateSeverManager.GetViewStateSvrMgr().SaveViewState(_viewState.ToString());
+        long lRequestNumber = ViewStateServerManager.GetViewStateSvrMgr().SaveViewState(_viewState.ToString());
 
         //Need to register the viewstate hidden field (must be present or postback things don't 
         // work, we use in our case to store the request number)

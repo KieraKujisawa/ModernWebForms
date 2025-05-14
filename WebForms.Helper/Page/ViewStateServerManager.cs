@@ -5,7 +5,7 @@ using System.Configuration;
 
 namespace WebForms.Helper.Page;
 
-public class ViewStateSeverManager
+public class ViewStateServerManager
 {
     // This uses an array and mod to cycle repeatedly through an array (so limited size)
 
@@ -32,7 +32,7 @@ public class ViewStateSeverManager
         }
     }
 
-    public ViewStateSeverManager()
+    public ViewStateServerManager()
     {
     }
 
@@ -64,21 +64,21 @@ public class ViewStateSeverManager
     }
 
 
-    public static ViewStateSeverManager GetViewStateSvrMgr()
+    public static ViewStateServerManager GetViewStateSvrMgr()
     {
-        ViewStateSeverManager oViewStateMgr;
+        ViewStateServerManager oViewStateMgr;
 
         //Check if already created the order object in session
         if (null == System.Web.HttpContext.Current.Session[SESSION_VIEW_STATE_MGR])
         {
             //Not already in session, create a new one and put in session
-            oViewStateMgr = new ViewStateSeverManager();
+            oViewStateMgr = new ViewStateServerManager();
             System.Web.HttpContext.Current.Session[SESSION_VIEW_STATE_MGR] = oViewStateMgr;
         }
         else
         {
             //Return the session order
-            oViewStateMgr = (ViewStateSeverManager)System.Web.HttpContext.Current.Session[SESSION_VIEW_STATE_MGR];
+            oViewStateMgr = (ViewStateServerManager)System.Web.HttpContext.Current.Session[SESSION_VIEW_STATE_MGR];
         }
 
         return oViewStateMgr;
