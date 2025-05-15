@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WebForms.Helper.Enum;
 
-namespace WebForms.Helper.Auth;
+namespace WebForms.Auth;
 
 public static class UserInfo
 {
