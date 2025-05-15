@@ -18,17 +18,17 @@ namespace WebForms.Helper.Page;
 public class BasePage : System.Web.UI.Page
 {
     //Setup the name of the hidden field on the client for storing the viewstate key
-    public const string VIEW_STATE_FIELD_NAME = "__VIEWSTATE";
+    public const string VIEW_STATE_FIELD_NAME = "BASEPAGE_VIEWSTATE";
 
     //Setup a formatter for the viewstate information
-    private LosFormatter _formatter = null;
+    private LosFormatter? _formatter = null;
 
     public BasePage()
     {
     }
 
     //overriding method of Page class
-    protected override object LoadPageStateFromPersistenceMedium()
+    protected override object? LoadPageStateFromPersistenceMedium()
     {
         //If server side enabled use it, otherwise use original base class implementation
         if (true == ViewStateServerManager.GetViewStateSvrMgr().ServerSideEnabled)
@@ -55,7 +55,7 @@ public class BasePage : System.Web.UI.Page
     }
 
     //implementation of method
-    private object LoadViewState()
+    private object? LoadViewState()
     {
         if (_formatter == null)
         {
@@ -99,6 +99,13 @@ public class BasePage : System.Web.UI.Page
         {
             _formatter = new LosFormatter();
         }
+
+        // parse the viewState
+        StringWriter writer = new StringWriter();
+        ViewStateParser p = new ViewStateParser(writer);
+
+        p.ParseViewStateGraph(viewState);
+        var state = writer.ToString();
 
         //Save the viewstate information
         StringBuilder _viewState = new StringBuilder();
