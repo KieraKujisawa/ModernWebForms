@@ -19,6 +19,8 @@ namespace WebForms.Helper.Page;
 
 public class BasePage : System.Web.UI.Page
 {
+    #region "Initialization"
+
     //Setup the name of the hidden field on the client for storing the viewstate key
     public const string VIEW_STATE_FIELD_NAME = "BASEPAGE_VIEWSTATE";
 
@@ -28,6 +30,10 @@ public class BasePage : System.Web.UI.Page
     public BasePage()
     {
     }
+
+    #endregion
+
+    #region "overriden methods"
 
     //overriding method of Page class
     protected override object? LoadPageStateFromPersistenceMedium()
@@ -62,6 +68,10 @@ public class BasePage : System.Web.UI.Page
             base.SavePageStateToPersistenceMedium(viewState);
         }
     }
+
+    #endregion
+
+    #region "Load / Save ViewState"
 
     //implementation of method
     private object? LoadViewState()
@@ -111,13 +121,6 @@ public class BasePage : System.Web.UI.Page
             _formatter = new LosFormatter();
         }
 
-        // parse the viewState
-        StringWriter writer = new StringWriter();
-        ViewStateParser p = new ViewStateParser(writer);
-
-        p.ParseViewStateGraph(viewState);
-        var state = writer.ToString();
-
         //Save the viewstate information
         StringBuilder _viewState = new StringBuilder();
         StringWriter _writer = new StringWriter(_viewState);
@@ -131,6 +134,10 @@ public class BasePage : System.Web.UI.Page
         // work, we use in our case to store the request number)
         ClientScript.RegisterHiddenField(VIEW_STATE_FIELD_NAME, lRequestNumber.ToString());
     }
+
+    #endregion
+
+    #region "Save / Load Control State"
 
     private void LoadAddedControlStates(System.Web.UI.Control? inControl)
     {
@@ -256,6 +263,10 @@ public class BasePage : System.Web.UI.Page
         return ret.ToArray();
     }
 
+    #endregion
+
+    #region "Helper Functions"
+
     protected string[]? GetControlNames()
     {
         LoadControls(null, true);
@@ -273,6 +284,7 @@ public class BasePage : System.Web.UI.Page
     }
 
     private Hashtable _lControls = new Hashtable();
+
     private void LoadControls(Control? inControl, bool inReset)
     {
         if (inReset) _lControls = new Hashtable();
@@ -383,4 +395,18 @@ public class BasePage : System.Web.UI.Page
             }
         }
     }
+
+    #endregion
+
+    public string ParseViewState()
+    {
+        // parse the viewState
+        StringWriter writer = new StringWriter();
+        ViewStateParser p = new ViewStateParser(writer);
+
+        //p.ParseViewStateGraph(viewState);
+
+        return writer.ToString();
+    }
+
 }
