@@ -347,7 +347,7 @@
       <Project>{83d6814b-2dc7-4d02-af30-c6e1a33aba80}</Project>
       <Name>Ninject.WebForms.Services</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\WebForms.Helper\WebForms.Helper.csproj">
+    <ProjectReference Include="..\..\Libraries\WebForms.Helper\WebForms.Helper.csproj">
       <Project>{7640ba7d-19a3-4906-9d44-95b10bd8adb3}</Project>
       <Name>WebForms.Helper</Name>
     </ProjectReference>

@@ -101,5 +101,5 @@ public class ViewStateServerManager
             oResult = (ViewStateServerManager)System.Web.HttpContext.Current.Session[SESSION_VIEW_STATE_MGR];
         }
         return oResult;
-    }    
+    }
 }
