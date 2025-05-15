@@ -1,7 +1,7 @@
 ﻿using System;
-
 using System.Collections;
 using System.Configuration;
+using System.Web.Security.AntiXss;
 
 namespace WebForms.Helper.Page;
 
@@ -15,8 +15,12 @@ public class ViewStateServerManager
     // the amount of memory consumed by the viewstate kept per page.  
     private const short VIEW_STATE_NUM_PAGES = 5;       //Number of pages to keep viewstate for
 
-    //Name of storage location for veiwstate information
+    //Name of storage location for viewstate information
     private const string SESSION_VIEW_STATE_MGR = "VIEW_STATE_MGR";
+
+    private const string PAGE_INSTANCE_FIELD_NAME = "PAGE_INSTANCE_FIELD_NAME";
+
+    private const string URL_INSTANCE_KEY = "instanceguid";
 
     private long lPageCount = 0;    //Number of pages seen by this customer 
     private string[] ViewStates = new string[VIEW_STATE_NUM_PAGES]; //Store for viewstates
@@ -63,24 +67,39 @@ public class ViewStateServerManager
         return ViewStates[siIndex];
     }
 
-
-    public static ViewStateServerManager GetViewStateSvrMgr()
+    public string GetPageKey(BasePage inPage)
     {
-        ViewStateServerManager oViewStateMgr;
-
-        //Check if already created the order object in session
-        if (null == System.Web.HttpContext.Current.Session[SESSION_VIEW_STATE_MGR])
+        string sResult = inPage.Request.Path;
+        // Check if the client has form field that stores request key
+        System.Web.UI.HtmlControls.HtmlInputHidden oInstanceKeyControl = (System.Web.UI.HtmlControls.HtmlInputHidden)inPage.FindControl(PAGE_INSTANCE_FIELD_NAME);
+        if (oInstanceKeyControl == null)
         {
-            //Not already in session, create a new one and put in session
-            oViewStateMgr = new ViewStateServerManager();
-            System.Web.HttpContext.Current.Session[SESSION_VIEW_STATE_MGR] = oViewStateMgr;
+            oInstanceKeyControl = new System.Web.UI.HtmlControls.HtmlInputHidden();
+            oInstanceKeyControl.ID = PAGE_INSTANCE_FIELD_NAME;
+            string sValue = AntiXssEncoder.XmlEncode(inPage.Request[URL_INSTANCE_KEY]);
+            if (sValue == null) sValue = "1"; // Default;
+            oInstanceKeyControl.Value = sValue;
+        }
+        string sInstanceValue = oInstanceKeyControl.Value;
+        if (sInstanceValue == "") sInstanceValue = "1"; // Default
+        sResult += "__INSTANCE=" + sInstanceValue;
+        return sResult;
+    }
+
+    public static ViewStateServerManager GetInstance()
+    {
+        ViewStateServerManager oResult;
+
+        // Not already in session, create a new one and put in session
+        if (System.Web.HttpContext.Current.Session[SESSION_VIEW_STATE_MGR] == null)
+        {
+            oResult = new ViewStateServerManager();
+            System.Web.HttpContext.Current.Session[SESSION_VIEW_STATE_MGR] = oResult;
         }
         else
         {
-            //Return the session order
-            oViewStateMgr = (ViewStateServerManager)System.Web.HttpContext.Current.Session[SESSION_VIEW_STATE_MGR];
+            oResult = (ViewStateServerManager)System.Web.HttpContext.Current.Session[SESSION_VIEW_STATE_MGR];
         }
-
-        return oViewStateMgr;
-    }
+        return oResult;
+    }    
 }
