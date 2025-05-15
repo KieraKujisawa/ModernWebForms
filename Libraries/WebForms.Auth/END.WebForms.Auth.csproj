@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+	  <LangVersion>latest</LangVersion>
+	  <Nullable>enable</Nullable>
+  </PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="Newtonsoft.Json.Bson" Version="1.0.3" />
+		<PackageReference Include="SQLite.CodeFirst" Version="1.7.0.36" />
+		<PackageReference Include="System.Data.SQLite.EF6" Version="1.0.119" />
+		<PackageReference Include="System.Data.SQLite.Linq" Version="1.0.119" />
+		<PackageReference Include="Owin" Version="1.0.0" />
+		<PackageReference Include="Microsoft.Owin" Version="4.2.2" />
+		<PackageReference Include="Microsoft.Owin.Host.SystemWeb" Version="4.2.2" />
+		<PackageReference Include="Microsoft.Owin.Security" Version="4.2.2" />
+		<PackageReference Include="Microsoft.Owin.Security.Cookies" Version="4.2.2" />
+		<PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.4" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.4" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="9.0.4" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="9.0.4" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.4" />
+		<PackageReference Include="System.Text.Json" Version="9.0.5" />
+	</ItemGroup>
+  <ItemGroup>
+    <Folder Include="EntityFramework\Contexts\" />
+    <Folder Include="EntityFramework\Models\Page\" />
+  </ItemGroup>
+
+</Project>
